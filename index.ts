@@ -1,4 +1,6 @@
 import { createTestClient } from "./createTestClient";
+import { startSpinner, stopSpinner, renderMessages, renderStatus, promptUser, beginStreaming, renderStreamingChunk } from "./ui";
+import { useFetch } from "./useFetch";
 
 const fragola = createTestClient();
 
@@ -9,9 +11,12 @@ const agent = fragola.agent({
     modelSettings: {
         stream: true
     }
-});
+}).use(useFetch({
+    onBeforeRequest(params) {
+        return params;
+    }
+}));
 
-import { startSpinner, stopSpinner, renderMessages, renderStatus, promptUser, beginStreaming, renderStreamingChunk } from "./ui";
 
 // Refresh UI after every state update
 let _wasGenerating = false;
