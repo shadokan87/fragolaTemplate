@@ -1,0 +1,16 @@
+{
+  "name": "fragolatemplate",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@fragola-ai/agentic-sdk-core": "^0.0.2-a2ui",
+    "portkey-ai": "^3.0.3"
+  }
+}
